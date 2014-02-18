@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>fileTypes</key>
+  <array>
+    <string>test</string>
+  </array>
+  <key>name</key>
+  <string>Mozilla Test Output</string>
+  <key>patterns</key>
+  <array>
+    <dict>
+      <key>match</key>
+      <string>\bTEST-INFO\b</string>
+      <key>name</key>
+      <string>string</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>\b(INFO TEST-END|TEST-START|TEST-PASS)\b</string>
+      <key>name</key>
+      <string>entity.name.function</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>^\s*\b\d?\d:\d\d[:.]\d\d\b</string>
+      <key>name</key>
+      <string>comment</string>
+    </dict>
+     <dict>
+      <key>match</key>
+      <string>\bEMITTING:</string>
+      <key>name</key>
+      <string>support.function.dom.js</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>WARNING:?</string>
+      <key>name</key>
+      <string>keyword</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>JavaScript strict warning:</string>
+      <key>name</key>
+      <string>variable.parameter.function.js</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>(\+\+|--).*</string>
+      <key>name</key>
+      <string>comment</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>.*(exception:|JavaScript Error:|TEST-UNEXPECTED-FAIL|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:).*</string>
+      <key>name</key>
+      <string>invalid</string>
+    </dict>
+  </array>
+  <key>scopeName</key>
+  <string>source.mozillatest</string>
+  <key>uuid</key>
+  <string>ad841065-7197-4ca1-bd27-2568e7d7a658</string>
+</dict>
+</plist>
