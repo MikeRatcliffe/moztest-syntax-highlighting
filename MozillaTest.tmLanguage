@@ -18,7 +18,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>.*INFO TEST-END.*|.*TEST-START.*|\bTEST-PASS\b</string>
+      <string>.*INFO TEST-END.*|.*TEST-START.*|\bTEST-PASS\b|\bTEST-KNOWN-FAIL\b</string>
       <key>name</key>
       <string>entity.name.function</string>
     </dict>
@@ -60,7 +60,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>.*(exception:|JavaScript Error:|TEST-UNEXPECTED-FAIL|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
+      <string>.*(exception:|JavaScript Error:|TEST-UNEXPECTED-FAIL|TEST-UNEXPECTED-PASS|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
       <key>name</key>
       <string>invalid</string>
     </dict>
