@@ -60,7 +60,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>.*(exception:|JavaScript Error:|TEST-UNEXPECTED-FAIL|TEST-UNEXPECTED-PASS|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
+      <string>.*([Ee]xception[^s]|JavaScript Error:(?! "The character encoding)|TEST-UNEXPECTED-FAIL|TEST-UNEXPECTED-PASS|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
       <key>name</key>
       <string>invalid</string>
     </dict>
