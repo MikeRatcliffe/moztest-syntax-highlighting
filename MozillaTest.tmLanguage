@@ -12,15 +12,15 @@
   <array>
     <dict>
       <key>match</key>
-      <string>\bTEST-INFO\b</string>
+      <string>.*TEST-START.*|.*TEST-END.*|\bTEST-KNOWN-FAIL\b</string>
       <key>name</key>
-      <string>string</string>
+      <string>entity.name.function</string>
     </dict>
     <dict>
       <key>match</key>
-      <string>.*INFO TEST-END.*|.*TEST-START.*|\bTEST-PASS\b|\bTEST-KNOWN-FAIL\b</string>
+      <string>\bTEST-INFO\b</string>
       <key>name</key>
-      <string>entity.name.function</string>
+      <string>string</string>
     </dict>
     <dict>
       <key>match</key>
@@ -60,7 +60,69 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>.*([Ee]xception[^s]|JavaScript Error:(?! "The character encoding)|TEST-UNEXPECTED-FAIL|TEST-UNEXPECTED-PASS|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
+      <string>\[(JavaScript Warning:.+)\]</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>keyword</string>
+        </dict>
+      </dict>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>(.*)(TEST-PASS)(.*)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>comment</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>entity.name.function</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>text</string>
+        </dict>
+      </dict>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>(.*)(TEST-INFO)(.*exceptions.*)</string>
+      <key>captures</key>
+      <dict>
+        <key>1</key>
+        <dict>
+          <key>name</key>
+          <string>comment</string>
+        </dict>
+        <key>2</key>
+        <dict>
+          <key>name</key>
+          <string>string</string>
+        </dict>
+        <key>3</key>
+        <dict>
+          <key>name</key>
+          <string>text</string>
+        </dict>
+      </dict>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>.*\b[Ee]xception\b.*</string>
+      <key>name</key>
+      <string>invalid</string>
+    </dict>
+    <dict>
+      <key>match</key>
+      <string>.*(JavaScript Error:(?! "The character encoding)|TEST-UNEXPECTED-FAIL|TEST-UNEXPECTED-PASS|DEBUG:|Stack trace:|Stack:|"debugger" keyword|doesn't exist:|console.error).*</string>
       <key>name</key>
       <string>invalid</string>
     </dict>
